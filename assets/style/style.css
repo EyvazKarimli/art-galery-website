@@ -33,6 +33,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+a{
+    cursor: pointer;
+}
 body {
 	line-height: 1;
 }
@@ -257,4 +260,46 @@ main{
         }
     }
 }
+}
+
+footer{
+    background-color:#151515;
+    padding: 5% 10%;
+    display: flex;
+    .foot_left_side{
+        flex-basis: 20%;
+        p{
+            font-family: "BigSholderDisplay";
+            font-size: 45px;
+            color: #FFF;
+            font-weight: 800;
+        }
+    }
+    .foot_middle_side{
+        flex-basis: 60%;
+        p{
+            margin-left: 100px;
+            width: 60%;
+            color: var(--White, #FFF);
+            font-family: Outfit;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.75rem; /* 155.556% */
+        }
+    }
+    .foot_right_side{
+        flex-basis: 20%;
+        .icons{
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            svg{
+                width: 20px;
+            }
+            a:hover .social_media{
+                fill: #D5966C;
+            }
+        }
+    }
 }
