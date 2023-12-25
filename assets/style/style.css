@@ -1,216 +1,269 @@
 @import url("./reset.css");
 
-header{
+header.main{
     display: flex;
-    flex-direction: row;
-    height: 800px;
-    margin-bottom: 100px;
-}
-header >div {
-    height: inherit;
-}
-header .bg_head_black{
-    background-color: #151515;
-    flex-basis: 30%;
-    position: relative;
-}
-.bg_head_black .bg_black_text{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    p{
-        text-align: right;
-        color: var(--White, #FFF);
-        font-feature-settings: 'clig' off, 'liga' off;
-        font-family: "BigSholderDisplay";
-        font-size: 6rem;
-        font-style: normal;
-        font-weight: 900;
-        line-height: 5.5rem; /* 91.667% */
-        text-transform: uppercase;
+    flex-wrap: wrap;
+    height: 100vh;
+    .left_side{
+        flex-basis: 70%;
+        .bg_container{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            .bg_black{
+                width: 40%;
+                height: auto;
+                background-color: black;
+            }
+            .bg_image{
+                width: 60%;
+                height: 100vh;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .heading_text{
+            position: absolute;
+            left: 26.5%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            color: var(--White, #FFF);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: "BigSholderDisplay";
+            font-size: 6vw;
+            font-weight: 900;
+            line-height: 5.5vw; 
+            text-transform: uppercase;
+            h1{
+                .black_side{
+                    color: black;
+                }
+            }
+        }
     }
-}
-header .bg_head_img{
-    background-image: url("/assets/image/img/Rectangle.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    flex-basis: 40%;
-    position: relative;
-}
-.bg_head_img .bg_img_text{
-    text-align: left;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    p{
-        text-align: left;
-        color: #151515;
-        font-feature-settings: 'clig' off, 'liga' off;
-        font-family: "BigSholderDisplay";
-        font-size: 6rem;
-        font-style: normal;
-        font-weight: 900;
-        line-height: 5.5rem; /* 91.667% */
-        text-transform: uppercase;
-    }
-}
-header .bg_head_white{
-    flex-basis: 30%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    position: relative;
-    .text{
-        width: 85%;
-        position: absolute;
-        top: 40%;
-        left: 30%;
-        transform: translate(-50%, -50%);
-        p{
+    .right_side{
+        margin-left: -50px;
+        flex-basis: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10%;
+        .info_text_gallery{
+            width: 75%;
             color: var(--Dark-Grey, #444);
             font-feature-settings: 'clig' off, 'liga' off;
             font-family: "Outfit";
-            font-size: 1.375rem;
-            font-style: normal;
+            font-size: 1.375vw;
             font-weight: 300;
-            line-height: 2rem; /* 145.455% */
+            line-height: 2rem;
+        }
+        .button_location_link{
+            display: flex;
+            .location_link{
+                padding: 20px 25px;
+                background-color: #000000;
+                color: var(--White, #FFF);
+                font-family: "BigSholderDisplay";
+                font-size: 1.25vw;
+                font-weight: 800;
+                letter-spacing: 0.22725rem;
+                &:hover{
+                    background-color: #D5966C;
+                    color: #000000;
+                }
+                &:hover + .link_item{
+                    background-color: #000000;
+                }
+            }
+            .link_item{
+                padding: 20px 15px;
+                background-color: #D5966C;
+                color: #FFF;
+                font-weight: 900;
+                font-size: 1.25vw;
+                &:hover{
+                    color: #000000;
+                }
+            }
         }
     }
-    .button{
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: 60%;
-        left: 20%;
-        transform: translate(-50%, -60%);
-        font-family: "Outfit";
-        .location{
-            background-color: #151515;
-            padding: 20px 40px;
-            color: var(--White, #FFF);
-            font-family: "BigSholderDisplay";
-            font-size: 1.25rem;
-            font-style: normal;
-            font-weight: 800;
-            line-height: normal;
-            letter-spacing: 0.22725rem;
-            &:hover{
-                background-color: #D5966C;
-            }
-            &:hover + .location_arrow{
-                background-color: #151515;
-            }
-        }
-        .location_arrow{
-            background-color: #D5966C;
-            padding: 20px 40px;
-            font-family: "BigSholderDisplay";
-            font-size: 1.25rem;
-            font-style: normal;
-            font-weight: 800;
-            line-height: normal;
-            letter-spacing: 0.22725rem;
-        }
+}
 
+header.tablet_responsive{
+    display: none;
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        .image_side{
+            height: 500px;
+            flex-basis: 70%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .text_side{
+            padding-top: 10%;
+            margin-left: -50px;
+            flex-basis: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 2%;
+            .heading_text{
+                color: var(--Almost-Black, #151515);
+                font-family: "BigSholderDisplay";
+                font-size: 4.375vw;
+                font-weight: 900;
+                line-height: 5.0625vw;
+                text-transform: uppercase;
+            }
+            .info_gallery{
+                width: 100%;
+                color: var(--Dark-Grey, #444);
+                font-family: "Outfit";
+                font-size: 2.125vw;
+                font-weight: 300;
+                line-height: 1.75rem;
+            }
+            .button_link{
+                display: flex;
+                .link_text{
+                    padding: 15px 20px;
+                    background-color: black;
+                    color: var(--White, #FFF);
+                    font-family: "BigSholderDisplay";
+                    font-size: 2.25vw;
+                    font-weight: 800;
+                    letter-spacing: 0.22725rem;
+                    &:hover{
+                        background-color: #D5966C;
+                    }
+                    &:hover + .link_sign{
+                        background-color: black;
+                    }
+                }
+                .link_sign{
+                    padding: 15px 15px;
+                    background-color: #D5966C;
+                    color: white;
+                    font-family: "Outfit";
+                    font-size: 2.25vw;
+                    font-weight: 800;
+                    letter-spacing: 0.22725rem;
+                    &:hover{
+                        background-color: black;
+                    }
+                }
+            }
+        }
     }
 }
 
 main{
     padding: 10%;
-    .content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    .main_top_side{
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        gap: 30px;
-        .content_top{
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 50px;
+        .top_side_text{
+            width: 300px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .content_top_left{
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                .head_text{
-                    width: 60%;
-                    color: var(--Almost-Black, #151515);
-                    font-feature-settings: 'clig' off, 'liga' off;
-                    font-family: "BigSholderDisplay";
-                    font-size: 3.75rem;
-                    font-style: normal;
-                    font-weight: 900;
-                    line-height: 3.75rem; /* 100% */
-                    text-transform: uppercase;
-                }
-                .info_text{
-                    width: 60%;
-                    color: var(--Dark-Grey, #444);
-                    font-feature-settings: 'clig' off, 'liga' off;
-                    font-family: "Outfit";
-                    font-size: 1.375rem;
-                    font-weight: 300;
-                    line-height: 2rem; 
-                }
+            flex-direction: column;
+            gap: 15px;
+            .head_text{
+                color: var(--Almost-Black, #151515);
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: "BigSholderDisplay";
+                font-size: 3.75vw;
+                font-weight: 900;
+                line-height: 3.75vw; 
+                text-transform: uppercase;
+            }
+            .head_info_text{
+                color: var(--Dark-Grey, #444);
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: "Outfit";
+                font-size: 1.375vw;
+                font-weight: 300;
+                line-height: 2vw;
             }
         }
-        .content_bottom{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            gap: 50px;
-            .content_bottom_left{
-                .image img{
-                    width: 700px;
-                    height: 730px;
-                }
+        .top_side_img{
+            img{
+                max-width: 100%;
+                height: auto;
             }
-            .content_bottom_right{
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                .image img{
-                    width: 465px;
-                }
 
-                .bottom_right_text{
-                    background-color:#151515;
-                    padding: 70px 50px;
-                    flex-basis: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 30px;
-                    .right_heading{
-                        color: var(--White, #FFF);
-                        font-feature-settings: 'clig' off, 'liga' off;
-                        font-family: "BigSholderDisplay";
-                        font-size: 3.75rem;
-                        font-style: normal;
-                        font-weight: 900;
-                        line-height: 3.75rem; /* 100% */
-                        text-transform: uppercase;
-                    }
-                    .right_info_text{
-                        color: var(--White, #FFF);
-                        font-feature-settings: 'clig' off, 'liga' off;
-                        font-family: "Outfit";
-                        font-size: 1.375rem;
-                        font-style: normal;
-                        font-weight: 300;
-                        line-height: 2rem; /* 145.455% */
-                    }
-                }
         }
     }
-}
+    .main_bottom_side{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        .left_bottom{
+            width: 55%;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .right_bottom{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .right_image{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            .right_text{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                background-color: black;
+                padding: 50px;
+                height: 100%;
+                color: #FFF;
+                .right_text_head{
+                    font-feature-settings: 'clig' off, 'liga' off;
+                    font-family: "BigSholderDisplay";
+                    font-size: 3.75vw;
+                    font-weight: 900;
+                    line-height: 3.75vw; 
+                    text-transform: uppercase;
+                }
+                .right_text_explain{
+                    font-feature-settings: 'clig' off, 'liga' off;
+                    font-family: "Outfit";
+                    font-size: 1.375vw;
+                    font-weight: 300;
+                    line-height: 2vw; 
+                }
+            }
+        }
+    }
 }
 
 footer{
     background-color:#151515;
     padding: 5% 10%;
     display: flex;
+    flex-wrap: wrap;
     .foot_left_side{
         flex-basis: 20%;
         p{
@@ -244,6 +297,82 @@ footer{
             }
             a:hover .social_media{
                 fill: #D5966C;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 900px){
+    header.main{
+        display: none;
+    }
+    header.tablet_responsive{
+        display: block;
+    }
+    main  .main_bottom_side{
+        flex-direction: column;
+        .left_bottom{
+            width: 100%;
+        }
+        .right_bottom{
+            flex-direction: row;
+            width: 100%;
+            .right_text{
+                padding: 20px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px){
+    header.tablet_responsive .container{
+        flex-direction: column;
+        .text_side{
+            padding-top: 1%;
+            margin-left: 50px;
+            gap: 15px;
+            .heading_text{
+                font-size: 8vw;
+                line-height: 8vw;
+            }
+            .info_gallery{
+                width: 80%;
+                font-size: 6vw;
+                line-height: 8vw;
+            }
+            .button_link .link_text, .button_link .link_sign{
+               font-size: 4vw;
+            }
+        }
+    }
+    main  .main_bottom_side .right_bottom{
+        flex-direction: column;
+        .right_text{
+            height: 200px;
+            .right_text_head{
+                width: 80%;
+                font-size: 10vw;
+                line-height: 10vw;
+            }
+            .right_text_explain{
+                width: 75%;
+                font-size: 4vw;
+                line-height: 4vw;
+            }
+        }
+    }
+    footer{
+        flex-direction: column;
+        gap: 15px;
+        .foot_middle_side{
+            p{
+                margin-left: 0;
+                width: 100% ;
+            }
+        }
+        .foot_right_side{
+            .icons{
+                justify-content: flex-start;
             }
         }
     }

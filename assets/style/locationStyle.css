@@ -70,7 +70,6 @@ header{
 main{
     background-color: black;
     margin-top: -4px;
-    height: 50vh;
     padding: 10% 15%;
     overflow: hidden;
     .container{
@@ -85,9 +84,9 @@ main{
                     color: var(--White, #FFF);
                     font-feature-settings: 'clig' off, 'liga' off;
                     font-family: "BigSholderDisplay";
-                    font-size: 4.375rem;
+                    font-size: 8.375vw;
                     font-weight: 900;
-                    line-height: 4.375rem; 
+                    line-height: 8.375vw; 
                     text-transform: uppercase;
                 }
             }
@@ -113,18 +112,18 @@ main{
                     color: var(--White, #FFF);
                     font-feature-settings: 'clig' off, 'liga' off;
                     font-family: "Outfit";
-                    font-size: 1.375rem;
+                    font-size: 2vw;
                     font-style: normal;
                     font-weight: 300;
-                    line-height: 2rem;
+                    line-height: 2vw;
                 }
                 .info_address{
                     color: var(--White, #FFF);
                     font-feature-settings: 'clig' off, 'liga' off;
                     font-family: "Outfit";
-                    font-size: 1.375rem;
+                    font-size: 2.5vw;
                     font-weight: 300;
-                    line-height: 2rem;
+                    line-height: 2.5vw;
                 }
             }
         }
@@ -149,7 +148,7 @@ footer{
         p{
             margin-left: 100px;
             width: 60%;
-            font-family: Outfit;
+            font-family: "Outfit";
             font-size: 1.125rem;
             font-style: normal;
             font-weight: 300;
@@ -183,24 +182,7 @@ footer{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 800px) {
     header{
         .back_button{
             left: 0;
@@ -215,6 +197,53 @@ footer{
                 padding: 10px;
                 font-weight: 700;
                 font-size: 1rem;
+            }
+        }
+    }
+    main{
+        .container{
+            flex-direction: column;
+            .left_side{
+                flex-basis: 100%;
+                .left_side_text{
+                    width: 100%;
+                    p{
+                        width: 100%;
+                    }
+                }
+            }
+            .right_side{
+                .right_side_text{
+                    .address{
+                        font-size: 5vw;
+                        line-height: 5vw;
+                    }
+                    .info_address{
+                        font-size: 5vw;
+                        line-height: 5vw;
+                    }
+                }
+
+            }
+        }
+    }
+  }
+
+
+
+  @media only screen and (max-width: 600px){
+    footer{
+        flex-direction: column;
+        gap: 15px;
+        .foot_middle_side{
+            p{
+                margin-left: 0;
+                width: 100% ;
+            }
+        }
+        .foot_right_side{
+            .icons{
+                justify-content: flex-start;
             }
         }
     }
