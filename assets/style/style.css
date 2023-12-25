@@ -345,6 +345,17 @@ footer{
             }
         }
     }
+    main .main_top_side .top_side_text{
+        .head_text{
+            font-size: 8vw;
+            line-height: 8vw;
+        }
+        .head_info_text{
+            width: 100%;
+            font-size: 6vw;
+            line-height: 6vw;
+        }
+    }
     main  .main_bottom_side .right_bottom{
         flex-direction: column;
         .right_text{
